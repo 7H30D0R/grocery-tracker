@@ -1,0 +1,722 @@
+@font-face {
+    font-family: FallingSky;
+    src: url("../fonts/FallingSky.otf") format("opentype");
+}
+
+@font-face {
+    font-family: FallingSky;
+    font-weight: bold;
+    src: url("../fonts/FallingSkyBd.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+body {
+    font-family: 'FallingSky';
+    font-size: 14px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    float: left;
+    width: 100%;
+}
+
+.header-title {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(190,0,0);
+    float: left;
+    color: #FFF;
+    font-size: 26px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-lowerbar {
+    width: 100%;
+    height: 36px;
+    float: left;
+    background-color: rgb(64,64,64);
+    line-height: 36px;
+    text-align: center;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.content {
+    float: left;
+    padding: 10px;
+    width: 100%;
+    height: Calc(100% - 50px - 36px - 50px);
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.content.add-products,
+.content.stats {
+    height: Calc(100% - 50px - 50px);
+}
+
+
+.content.center {
+    text-align: center;
+}
+
+.content.no-margin {
+    padding: 0 !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: #2A2A2A;
+}
+
+.footer-menu {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    text-align: center;
+    display: table;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: table;
+}
+
+.footer-menu a {
+    display: table-cell;
+    text-decoration: none;
+    width: 40px;
+    height: 50px;
+    
+}
+
+.footer-menu li {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*margin: 0 20px 0 0;*/
+}
+
+li.icon-home {
+    background-image: url('../images/icon_w_home.png');
+}
+
+li.icon-add-products {
+    background-image: url('../images/icon_w_add_products.png');
+}
+
+li.icon-stats {
+    background-image: url('../images/icon_w_stats.png');
+}
+li.icon-price {
+    background-image: url('../images/icon_w_price.png');
+}
+li.icon-menu {
+    background-image: url('../images/icon_w_menu.png');
+}
+
+.add-products-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.add-products-table-wrapper {
+    height: calc(100% - 55px);
+    margin-bottom: 5px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.add-products-table tr:first-child {
+    height: 36px;
+    background-color: rgb(64,64,64) !important;
+    line-height: 36px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+}
+
+.add-products-table tr {
+    height: 40px;
+    background: #ECECEC;
+}
+
+.add-products-table tr:nth-child(odd) {
+    background: #D5D5D5;
+}
+
+.add-products-table tr td {
+    text-align: center;
+    font-size: 13px;
+}
+
+.add-products-table tr th:first-child {
+    width: 50%;
+}
+
+.add-products-table tr td:first-child {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 5px;
+    line-height: 40px;
+    max-height: 40px;
+    white-space: nowrap;
+}
+
+.add-products .bottom-controls {
+    height: 45px;
+    line-height: 45px;
+}
+
+.add-products .bottom-controls .left {
+    float: left;
+    width: 30%;
+}
+
+.add-products .bottom-controls .center {
+    float: left;
+    width: 40%;
+}
+
+.add-products .bottom-controls .right {
+    float: left;
+    width: 30%;
+}
+
+.add-products .bottom-controls .cancel-button {
+    background-color: #C9C9C9;
+    margin: 5px 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-image: url('../images/icon_exit.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.add-products .bottom-controls .accept-button {
+    background-color: #C9C9C9;
+    margin: 5px 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-image: url('../images/icon_checkmark_2.png');
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+}
+
+.add-products .bottom-controls .scan-button {
+    background-color: #C9C9C9;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 7px;
+    background-image: url('../images/icon_scan.png');
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.scanner {
+    height: calc(100% - 50px);
+    background: #404040;
+}
+
+.scanner .webcam {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100% - 150px);
+    overflow: hidden;
+}
+
+.scanner .webcam video {
+    width: 100%;
+    max-width: 100%;
+}
+
+.drawingBuffer {
+    position: absolute;
+    top: 86px;
+    left: 0;
+    z-index: 5;
+    max-width: 100% !important;
+}
+
+.scanner .scanner-footer {
+    position: absolute;
+    bottom: 55px;
+    width: 100%;
+    height: 45px;
+}
+
+.scanner .cancel-scan-button {
+    background-color: #C9C9C9;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 7px;
+    background-image: url('../images/icon_exit.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.stats-menu {
+    width: 100%;
+}
+
+.stats-menu a {
+    text-decoration: none;
+}
+
+.stats-menu li {
+    text-decoration: none;
+    color: #000;
+    background: #ECECEC;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 45px;
+}
+
+.stats-menu a:nth-child(even) li {
+    background: #D5D5D5;
+}
+
+.stats-table {
+    width: 100%;
+}
+
+.stats-table tr:first-child {
+    height: 36px;
+    background-color: rgb(64,64,64) !important;
+    line-height: 36px;
+    color: #FFF;
+    font-weight: bold;
+    border: 0;
+}
+
+.stats-table tr {
+    background: #ECECEC;
+    height: 40px;
+}
+
+.stats-table tr td {
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.stats-table tr:nth-child(odd) {
+    background: #D5D5D5;
+}
+
+.stats-table .item-details-button {
+    width: 50px;
+    height: 40px;
+    background-image: url("../images/icon_details.png");
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position-y: center;
+    background-position-x: 20px
+}
+
+.product-details {
+    height: 100%;
+}
+
+.product-details .product-details-content {
+    float: left;
+    width: 100%;
+    height: calc(100% - 36px);
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.product-details-header {
+    width: 100%;
+    height: 36px;
+    float: left;
+    background-color: rgb(64,64,64);
+    line-height: 36px;
+    text-align: center;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.product-details .detail-group {
+    float: left;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.product-details .detail-group label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.product-details .detail-group .item-detail {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #ECECEC;
+}
+
+.product-details .product-details-back-button {
+    color: #FFF;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.product-details .product-details-delete-button {
+    width: 45px;
+    height: 36px;
+    background-color: #313131;
+    position: absolute;
+    right: 0;
+    background-image: url('../images/delete_icon.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+.product-details .product-details-footer {
+    float: left;
+    width: 100%;
+    height: 36px;
+    background: rgb(64,64,64);
+    line-height: 36px;
+}
+
+.stats .normal-content {
+    height: 100%;
+}
+
+.stats .loading-screen {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.stats .stats-table-wrapper {
+    height: calc(100% - 36px);
+    width: 100%;
+    overflow-y: auto;
+}
+
+.stats .stats-footer {
+    height: 36px;
+    width: 100%;
+    background: rgb(64,64,64);
+}
+
+.stats .stats-footer .timespan-selector {
+    width: 100%;
+    height: 100%;
+    background: rgb(64,64,64);
+    border: 0;
+    color: #FFF;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.stats .stats-footer .timespan-selector:active,
+.stats .stats-footer .timespan-selector:focus {
+    outline: 0;
+    border: 0;
+}
+
+
+.stats .loading-screen .loading-icon {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/icon_loading.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.stats .loading-screen .loading-screen-header {
+    width: 100%;
+    height: 36px;
+    float: left;
+    background-color: rgb(64,64,64);
+    line-height: 36px;
+    text-align: center;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.add-products-page .update-product-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.add-products-page .update-product-wrapper .update-product-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 5;
+}
+
+.add-products-page .update-product-wrapper .update-product {
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    height: 225px;
+    width: 100%;
+    background: #FFF;
+    transform: translate(0, -50%);
+}
+
+.add-products-page .update-product .title {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    background-color: rgb(64,64,64);
+    margin-bottom: 10px;
+    color: #FFF;
+    font-weight: normal;
+}
+
+.add-products-page .update-product .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.add-products-page .update-product .form-group label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.add-products-page .update-product .form-group-field {
+    width: 100%;
+    height: 40px;
+    line-height: 25px;
+    background: #E0E0E0;
+    text-align: center;
+    padding: calc((40px - 25px) / 2);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.add-products-page .update-product .form-group-field input {
+    height: 25px;
+    border: 0;
+    background: #E0E0E0;
+    font-family: 'FallingSky';
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+}
+
+.add-products-page .plus-button,
+.add-products-page .minus-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background: #969696;
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: bold;
+    box-shadow: 2px 4px 3px #888888;
+}
+
+.add-products-page .plus-button:active,
+.add-products-page .minus-button:active {
+    background: #bbbbbb;
+}
+
+.product-not-found .form-group,
+.add-new-product .form-group {
+    float: left;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.product-not-found .form-group label,
+.add-new-product .form-group {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.product-not-found .form-group .item-detail,
+.add-new-product .form-group .item-detail {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #E0E0E0;
+}
+
+.product-not-found .add-new-product-button-wrapper {
+    float: left;
+    margin-top: 75px;
+    width: 100%;
+}
+
+.product-not-found .add-new-product-button-wrapper label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.product-not-found .add-new-product-button {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    background-image: url('../images/icon_add.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.product-not-found .product-not-found-footer,
+.add-new-product .add-new-product-footer {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    height: 55px;
+    width: 100%;
+    background: rgb(64,64,64);
+}
+
+.product-not-found .product-not-found-footer .product-not-found-cancel-button {
+    background-color: #E0E0E0;
+    width: 45px;
+    height: 45px;
+    margin: 5px auto;
+    border-radius: 7px;
+    background-image: url('../images/icon_exit.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.add-new-product .add-new-product-footer .add-new-product-cancel-button {
+    background-color: #E0E0E0;
+    width: 40px;
+    height: 40px;
+    margin: 5px 20px;
+    border-radius: 7px;
+    background-image: url('../images/icon_exit.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}
+
+.add-new-product .add-new-product-footer .add-new-product-accept-button {
+    background-color: #E0E0E0;
+    width: 40px;
+    height: 40px;
+    margin: 5px 20px;
+    border-radius: 7px;
+    background-image: url('../images/icon_checkmark_2.png');
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}
+
+.add-new-product .add-new-product-footer {
+    height: 50px;
+}
+
+.add-new-product .add-new-product-footer-inner {
+    width: 160px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.add-new-product .form-group-field {
+    width: 100%;
+    height: 40px;
+    line-height: 25px;
+    background: #E0E0E0;
+    text-align: center;
+    padding: calc((40px - 25px) / 2);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.add-new-product .form-group-field input {
+    height: 25px;
+    border: 0;
+    background: #E0E0E0;
+    font-family: 'FallingSky';
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.add-new-product .form-group-field input[type="number"] {
+    width: 50px;
+}
+
+.add-new-product-error {
+    position: absolute;
+    width: 100%;
+    bottom: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: rgb(190,0,0);
+    color: #FFF;
+}

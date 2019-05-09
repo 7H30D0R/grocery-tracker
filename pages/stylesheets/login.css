@@ -1,0 +1,167 @@
+@font-face {
+    font-family: FallingSky;
+    src: url("../fonts/FallingSky.otf") format("opentype");
+}
+
+@font-face {
+    font-family: FallingSky;
+    font-weight: bold;
+    src: url("../fonts/FallingSkyBd.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'FallingSky';
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-image: url('../images/nature_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: brightness(65%) contrast(1.75);
+    -webkit-filter: brightness(65%) contrast(1.75);
+
+    height: 100%;
+    width: 100%;
+    overflow-x:hidden;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 5;
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    min-width: 300px;
+    max-width: 325px;
+    height: 100%;
+}
+
+.logo {
+    width: 100%;
+    height: 150px;
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+}
+
+.login-body {
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+    min-height: 275px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .22);
+    border: 3px solid rgba(255, 255, 255, .11);
+    text-align: center;
+    color: #FFF;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.register-button {
+    float: left;
+    display: block;
+    color: #FFF;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    text-decoration: none;
+    background: #E10800;
+    margin-top: 40px;
+    margin-left: calc(50% - 100px);
+    width: 200px;
+    height: 45px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.login-body .title {
+    font-size: 27px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    margin-top: 25px;
+    width: 100%;
+    height: 33px;
+    border: 2px solid rgba(255, 255, 255, .11);
+    box-sizing: border-box;
+    padding: 0 10px;
+    color: #FFF;
+    background: rgba(255, 255, 255, .22);
+    font-weight: 600;
+    font-size: 15px;
+    float: left;
+}
+
+.login-form input[type="text"]::placeholder,
+.login-form input[type="email"]::placeholder,
+.login-form input[type="password"]::placeholder {
+    color: #D9D9D9;
+}
+
+.login-form input[type="submit"] {
+    float: left;
+    display: block;
+    color: #FFF;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    text-decoration: none;
+    background: #E10800;
+    margin-top: 25px;
+    margin-left: calc(50% - 75px);
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 0;
+}
+
+.login-body-footer {
+    float: left;
+    margin-top: 13px;
+    width: 100%;
+    text-align: center;
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 200;
+}
+
+.error-message {
+    width: 100%;
+    float: left;
+    color: #000000;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 200;
+    font-style: italic;
+}
